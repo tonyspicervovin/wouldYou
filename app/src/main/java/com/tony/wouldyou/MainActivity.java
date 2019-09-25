@@ -2,11 +2,13 @@ package com.tony.wouldyou;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
     Button mResetButton;
     TextView mCaveCounter;
     TextView mTreeHouseCounter;
-
+    private Button mNewQuestionButton;
+    private TextView mQuestionText;
 
     private static final String TAG ="MAIN_ACTIVITY";
 
     private static int caveCount = 0;
     private static int treeCount = 0;
-
+    private String question;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         mResetButton = findViewById(R.id.reset_button);
         mCaveCounter = findViewById(R.id.cave_counter);
         mTreeHouseCounter = findViewById(R.id.treehouse_counter);
-
+        mNewQuestionButton = findViewById(R.id.addQuestionButton);
         // finding ui components'
-
+        mQuestionText = findViewById(R.id.questionText);
 
         getCounts();
 
@@ -70,8 +73,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        mNewQuestionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, AnswerClass.class);
+                startActivityForResult(i,0);
+            }
+        });
 
     }
+
     public void getCounts(){
         mTreeHouseCounter.setText(String.valueOf(treeCount));
         mCaveCounter.setText(String.valueOf(caveCount));
@@ -89,9 +100,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle outBundle) {
         super.onRestoreInstanceState(outBundle);
-        treeCount= outBundle.getInt ("tree-count");
+        treeCount = outBundle.getInt ("tree-count");
         caveCount = outBundle.getInt("cave-count");
         //when instance state is loaded counts are retrieved with keys
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            if (data.hasExtra("question")){
+                question = data.getExtras().getString("question");
+                mQuestionText.setText(question);
+            }
+        }
     }
 
 }
