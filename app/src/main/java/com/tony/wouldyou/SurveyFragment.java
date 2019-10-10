@@ -63,7 +63,6 @@ public class SurveyFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.w(SURVEY_FRAGMENT_TAG, "result clicked");
-                mResultButton.setText("Pressed4");
                 mShowResultsListener.showResults(caveCount, treeCount);
 
             }
