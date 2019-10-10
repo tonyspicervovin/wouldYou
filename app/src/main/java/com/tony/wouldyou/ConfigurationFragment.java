@@ -1,9 +1,10 @@
 package com.tony.wouldyou;
 
 
-
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +12,11 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- *
  */
-public class configurationFragment extends Fragment {
+public class ConfigurationFragment extends Fragment {
 
 
-    public configurationFragment() {
+    public ConfigurationFragment() {
         // Required empty public constructor
     }
 
