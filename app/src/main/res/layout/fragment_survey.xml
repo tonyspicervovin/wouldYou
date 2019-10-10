@@ -14,7 +14,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginLeft="46dp"
         android:layout_marginTop="144dp"
-        android:text="Would you rather live in a cave or a treehouse?"
+        android:text="@string/would_question"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +25,7 @@
         android:layout_marginTop="51dp"
         android:layout_marginEnd="61dp"
         android:layout_marginRight="61dp"
-        android:text="Treehouse"
+        android:text="@string/tree_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionText" />
 
@@ -36,7 +36,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginLeft="46dp"
         android:layout_marginTop="51dp"
-        android:text="Cave"
+        android:text="@string/cave_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionText" />
 
@@ -47,7 +47,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="55dp"
-        android:text="Results"
+        android:text="@string/result_button"
         app:layout_constraintStart_toEndOf="@+id/cave_button"
         app:layout_constraintTop_toBottomOf="@+id/cave_button" />
 
@@ -58,7 +58,7 @@
         android:layout_marginStart="121dp"
         android:layout_marginLeft="121dp"
         android:layout_marginTop="60dp"
-        android:text="Add a question"
+        android:text="@string/add_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result_button" />
 

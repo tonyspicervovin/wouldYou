@@ -63,6 +63,7 @@ public class SurveyFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.w(SURVEY_FRAGMENT_TAG, "result clicked");
+                mResultButton.setText("Pressed4");
                 mShowResultsListener.showResults(caveCount, treeCount);
 
             }
@@ -86,7 +87,8 @@ public class SurveyFragment extends Fragment {
         });
 
 
-        return view;
+
+        return inflater.inflate(R.layout.fragment_survey, container, false);
     }
 
 
